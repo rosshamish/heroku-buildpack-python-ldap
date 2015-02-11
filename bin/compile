@@ -156,15 +156,6 @@ source $BIN_DIR/steps/setuptools
 # Uninstall removed dependencies with Pip.
 source $BIN_DIR/steps/pip-uninstall
 
-# Mercurial support.
-source $BIN_DIR/steps/mercurial
-
-# Pylibmc support.
-source $BIN_DIR/steps/pylibmc
-
-# Libffi support.
-source $BIN_DIR/steps/cryptography
-
 # Install python-ldap if needed.
 if grep -q python-ldap requirements.txt; then
     source $BIN_DIR/steps/python-ldap
@@ -172,9 +163,6 @@ fi
 
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
-
-# Django collectstatic support.
-sub-env $BIN_DIR/steps/collectstatic
 
 
 # ### Finalize
